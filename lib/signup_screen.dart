@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/home_screen.dart';
+
+import 'package:flutter_application_1/login_screen.dart';
 
 import 'colors.dart';
 import 'constants.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
+
+  static final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +17,10 @@ class SignupScreen extends StatelessWidget {
     
     return Scaffold(
          backgroundColor: Colors.white, 
-         body:Column(
+         body:SingleChildScrollView(
+           child:Form(
+            key: SignupScreen.formKey,
+             child:Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
@@ -78,7 +84,16 @@ class SignupScreen extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(10),
-                child: TextField(
+                child: TextFormField(
+                  validator: (userName){
+                    if(userName == null || userName.isEmpty){
+                        return "please enter your username";
+                    }
+                    else{
+                      return null;
+                    }
+                  },
+                   
                   decoration: InputDecoration(
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: primaryColor)),
@@ -90,7 +105,15 @@ class SignupScreen extends StatelessWidget {
               ),
                Padding(
                 padding: const EdgeInsets.all(10),
-                child: TextField(
+                child: TextFormField(
+                  validator: (email) {
+                    if (email == null || email.isEmpty) {
+                      return "Please enter your email";
+                    } else if (!RegExp(r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$").hasMatch(email)) {
+                      return "It's not a valid Email";
+                    }
+                    return null;
+                  },
                   decoration: InputDecoration(
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: primaryColor)),
@@ -114,11 +137,12 @@ class SignupScreen extends StatelessWidget {
         ),
       ),
       onPressed: () {
-        // Add your onPressed logic here
+          if (SignupScreen.formKey.currentState?.validate() ?? false){
          Navigator.push(
            context,
-           MaterialPageRoute(builder:(context) => (HomeScreen())),
+           MaterialPageRoute(builder:(context) => (LoginScreen())),
          );
+          }
       },
       child: Text(
         "Register",
@@ -143,7 +167,10 @@ class SignupScreen extends StatelessWidget {
         
  ],
   ),
+    )
+         )
     );
+         
   }
   
  

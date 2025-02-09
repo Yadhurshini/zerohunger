@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/donate.dart';
 
 import 'colors.dart';
 import 'constants.dart';
@@ -56,20 +57,13 @@ class HomeScreen extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
-                        "Zero Hunger",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: const Color.fromARGB(255, 22, 3, 193),
-                        ),
-                      ),
                       SizedBox(height: 10),
                       Text(
                         "Zero Hunger, part of the United Nations' Sustainable Development Goals, aims to eliminate hunger, ensure food security, improve nutrition, and promote sustainable agriculture by 2030. Despite advancements, millions still face hunger and malnutrition worldwide. This initiative focuses on equitable access to nutritious food, reducing food waste, supporting small-scale farmers, and creating sustainable food systems. Achieving this goal requires global collaboration to build a world where everyone has enough to eat.",
                         style: TextStyle(fontSize: 16, color: Colors.black87),
+                       
                       ),
                     ],
                   ),
@@ -89,7 +83,10 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DonateScreen()),
+                     );
                   },
                   child: Text(
                     "JOIN US",
@@ -143,10 +140,10 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                   
+                     
                   },
                   child: Text(
-                    "Logout",
+                    "Back",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
@@ -155,7 +152,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 8),
           ],
         ),
       ),
