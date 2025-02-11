@@ -144,7 +144,7 @@ class LoginScreen extends StatelessWidget {
                       if (LoginScreen.formKey.currentState?.validate() ?? false) {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => SignupScreen()),
+                          MaterialPageRoute(builder: (context) => HomeScreen()),
                         );
                       }
                     },
@@ -166,7 +166,7 @@ class LoginScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()),
+                        MaterialPageRoute(builder: (context) => SignupScreen()),
                       );
                     },
                     child: Text("Create Account"),

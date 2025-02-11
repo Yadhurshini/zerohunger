@@ -125,6 +125,29 @@ class SignupScreen extends StatelessWidget {
                 ),
                ),
               
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: TextFormField(
+                  obscureText: true, 
+                  validator: (Password) {
+                    if (Password == null || Password.isEmpty) {
+                      return "Please enter your password";
+                    } else if (Password.length < 6) {
+                      return "Password must be at least 6 characters";
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: primaryColor)),
+                    
+                    prefixIcon: Icon(Icons.email, color:primaryColor),
+                    labelText: "PASSWORD",
+              
+                    labelStyle: TextStyle(color: primaryColor,fontSize: 16)),
+                ),
+               ),
+              
             Center(
                   child: SizedBox(
                      height: height * 0.08,
@@ -147,8 +170,8 @@ class SignupScreen extends StatelessWidget {
       child: Text(
         "Register",
         style: TextStyle(
-          color: Colors.white, // Adjust text color as needed
-          fontSize: 20, // Adjust font size as needed
+          color: Colors.white, 
+          fontSize: 20, 
             ),
            ),
          ),

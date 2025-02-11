@@ -104,6 +104,18 @@ class FormScreen extends StatelessWidget {
                     labelStyle: TextStyle(color: Colors.black,fontSize: 16)),
                 ),
                ),
+               Padding(
+                padding: const EdgeInsets.all(10),
+                child: TextField(
+                  decoration: InputDecoration(
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black)),
+                      labelText: "✔.PHONE NUMBER",
+              
+                    labelStyle: TextStyle(color: Colors.black,fontSize: 16)),
+                ),
+               ),
+
 
                 Padding(
                 padding: const EdgeInsets.all(10),
