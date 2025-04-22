@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/final.dart';
 import 'colors.dart';
 
 class FormScreen extends StatelessWidget {
@@ -142,7 +143,10 @@ class FormScreen extends StatelessWidget {
       ),
       
       onPressed: () {
-       
+        Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const FinalScreen())
+                );
       },
       child: Text(
         "SUBMIT",

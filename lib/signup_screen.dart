@@ -129,7 +129,8 @@ class SignupScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(10),
                 child: TextFormField(
                   obscureText: true, 
-                  validator: (Password) {
+                  // ignore: non_constant_identifier_names
+                  validator:(Password) {
                     if (Password == null || Password.isEmpty) {
                       return "Please enter your password";
                     } else if (Password.length < 6) {
@@ -160,12 +161,12 @@ class SignupScreen extends StatelessWidget {
         ),
       ),
       onPressed: () {
-          if (SignupScreen.formKey.currentState?.validate() ?? false){
-         Navigator.push(
-           context,
-           MaterialPageRoute(builder:(context) => (LoginScreen())),
-         );
-          }
+         if (formKey.currentState?.validate() ?? false) {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => LoginScreen(),
+                ));
+              }
+            
       },
       child: Text(
         "Register",

@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
+  <head>
+    <base href="$FLUTTER_BASE_HREF">
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="A new Flutter project.">
 
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
+    <!-- iOS meta tags & icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="flutter_application_1">
+    <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png"/>
 
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="$FLUTTER_BASE_HREF">
+    <title>flutter_application_1</title>
+    <link rel="manifest" href="manifest.json">
 
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+    <!-- ✅ Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
 
-  <!-- iOS meta tags & icons -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="flutter_application_1">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+    <!-- ✅ Your Firebase Config -->
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyBcgPMzBe_bQYt1K_lR44ctkfBy7kkVOtw",
+        authDomain: "food-donation-f3316.firebaseapp.com",
+        databaseURL: "https://food-donation-f3316-default-rtdb.firebaseio.com",
+        projectId: "food-donation-f3316",
+        storageBucket: "food-donation-f3316.firebasestorage.app",
+        messagingSenderId: "1089123717486",
+        appId: "1:1089123717486:web:4848d50cbeb7a35582f17f"
+      };
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+      firebase.initializeApp(firebaseConfig);
+    </script>
+  </head>
 
-  <title>flutter_application_1</title>
-  <link rel="manifest" href="manifest.json">
-</head>
-<body>
-  <script src="flutter_bootstrap.js" async></script>
-</body>
+  <body>
+    <script src="flutter_bootstrap.js" async></script>
+  </body>
 </html>

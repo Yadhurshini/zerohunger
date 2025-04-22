@@ -3,13 +3,25 @@ import 'package:flutter_application_1/home_screen.dart';
 import 'package:flutter_application_1/signup_screen.dart';
 import 'colors.dart';
 import 'constants.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   static final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  void signIn(String email, String password) async {
+  try {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
+  } catch (e) {
+    // ignore: avoid_print
+    print(e.toString());
+  }
+}
 
-  @override
+@override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;

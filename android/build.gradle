@@ -1,16 +1,26 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.2.0'  // Ensure same Gradle version
+        classpath "com.google.gms:google-services:4.3.15"  // Firebase Plugin
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22"  // Match existing Kotlin version
+    }
+}
+
+plugins {
+    id("com.android.application") version "8.2.0" apply false
+    id("org.jetbrains.kotlin.android") version "1.9.22" apply false // Match existing Kotlin version
+    }
+
+
 allprojects {
     repositories {
         google()
         mavenCentral()
     }
-}
-
-rootProject.buildDir = "../build"
-subprojects {
-    project.buildDir = "${rootProject.buildDir}/${project.name}"
-}
-subprojects {
-    project.evaluationDependsOn(":app")
 }
 
 tasks.register("clean", Delete) {

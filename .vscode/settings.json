@@ -1,0 +1,11 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "cSpell.words": [
+        "allprojects",
+        "buildscript",
+        "Firestore",
+        "proguard",
+        "subprojects",
+        "vectordrawable"
+    ]
+}
